@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/figlet": "^1.5.8",
+    "@types/table": "^6.3.2",
+    "chalk": "^5.3.0",
+    "figlet": "^1.7.0",
+    "inquirer": "^9.2.17",
+    "table": "^6.8.2"
+  },
+  "name": "mazz_student_management_system",
+  "version": "1.1.2",
+  "main": "main.js",
+  "type": "module",
+  "bin": "main.js",
+  "devDependencies": {
+    "@types/inquirer": "^9.0.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
