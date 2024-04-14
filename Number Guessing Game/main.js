@@ -1,42 +1,34 @@
 #! /usr/bin/env node
 //? computer guess random number
 import inquirer from "inquirer";
+import figlet from "figlet";
 import chalk from "chalk";
+await figlet("Guess A Number", function (err, data) {
+    if (err) {
+        console.log("Something went wrong...");
+        console.dir(err);
+        return;
+    }
+    console.log(data);
+});
 async function start() {
     const answer = await inquirer.prompt({
         type: "input",
         name: "userInput",
-        message: "Input a number between  1 to 10:",
+        message: chalk.blue("Input a Number between 1 to 5:"),
     });
-    let secretNumber = Math.floor(Math.random() * 10);
-    //? add the user number in a new variable
+    let secretNumber = Math.floor(Math.random() * 5);
     const { userInput } = answer;
-    let user = 0;
-    let computer = 0;
-    if (userInput == secretNumber) {
-        let res = user + 1;
-        console.log(`computer choose ${chalk.blue(secretNumber)} and you choose ${userInput} , ${chalk.green("Yahooo You Win")}`);
-        console.log(`user score is ${res}`);
-    }
-    else {
-        console.log(`the computer choose ${chalk.blue(secretNumber)} and you choose ${userInput},${chalk.red("you guessed wrong")}  ,${chalk.green("better luck next time")}`);
-        let re = computer + 1;
-        console.log(`computer score is ${re}`);
-    }
-}
-async function startAgain() {
-    await start();
-    var again = await inquirer.prompt({
-        type: "input",
-        name: "restart",
-        message: "Do You Want To continue ? IF Yes Press Y",
-    });
-    if (again.restart === "y" ||
-        again.restart === "Y" ||
-        again.restart === "yes" ||
-        again.restart === "YES") {
-        console.log(chalk.greenBright("continueing..."));
-        start();
+    while (true) {
+        if (userInput == secretNumber) {
+            console.log(`Computer Choose ${chalk.yellow(secretNumber)} And You Also Choose ${chalk.bgBlue(userInput)},\n${chalk.green("Congratulations! You Win")}`);
+            break;
+        }
+        else if (userInput != secretNumber) {
+            console.log(`Computer Choose ${chalk.yellow(secretNumber)} and you choose ${chalk.bgRed(userInput)}, ${chalk.red("You Guessed Wrong")},\n${chalk.cyan("Try Again")}`);
+            await start();
+            break;
+        }
     }
 }
-startAgain();
+start();
