@@ -49,7 +49,7 @@ async function main() {
               if (isNaN(value) || value < 0 || value >= todos.length) {
                 return (
                   "Invalid index , Enter the input between 0 to" +
-                  "" +
+                  " " +
                   (todos.length - 1)
                 );
               }

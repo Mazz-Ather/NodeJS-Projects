@@ -1,39 +1,17 @@
 import inquirer from "inquirer";
 
-const currencies = {
-    PKR:{
-       PKR:1,
-       USD:0.0036,
-       GBP:0.0029,
-       EUR:0.0033,
-    },
-    USD:{
+const currencies :any= {
+   
+   
         USD:1,
         PKR:277.58,
         GBP:0.79,
         EUR:0.93,
-     },
-     GPB:{
-         GBP:1,
-        USD:1.26,
-        PKR:350.48,
-        EUR:1.17,
-     },
-     EUR:{
-         EUR:1,
-        USD:1.08,
-        PKR:299.80,
-        GBP:0.86,
-     },
+   
 }
 
 
-const main :{
-    // from:any, 
-    // to:any, 
-    // amount:number,
-
-}= await inquirer.prompt([
+const main :any = await inquirer.prompt([
     {
         type: 'list',
         name:"from",
@@ -54,19 +32,14 @@ const main :{
 ])
 
 
+let fromAmount =currencies[main.from]
+let toAmount =currencies[main.to]
+let amount =main.amount
+let baseAmount = fromAmount / amount
+let ConvertedAmount = baseAmount * toAmount
 
-if(main.from && main.to && "amount"){
- 
-
-}else{
-    console.log("invalid");
-    
-}
-
-
-
-
-
+Math.floor(ConvertedAmount)
+console.log(ConvertedAmount);
 
 
 

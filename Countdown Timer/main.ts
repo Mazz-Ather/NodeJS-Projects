@@ -2,19 +2,18 @@
 import inquirer from "inquirer"
 
 function getTime(targetDate:any) {
-    let previousTime = null; // Store previous time (seconds and minutes)
+    let previousTime = null; 
   
     while (targetDate - Date.now() > 0) {
       const now = Date.now();
       const remainingMilliseconds = Math.max(0, targetDate - now);
   
-      // Calculate remaining minutes and seconds
+      // Calculate minutes and seconds
       const remainingSeconds = Math.floor(remainingMilliseconds / 1000) % 60;
       const remainingMinutes = Math.floor(remainingMilliseconds / (1000 * 60));
-      const remainingHours = Math.floor(remainingMilliseconds / (1000 * 60 * 60));
-
+  
       // Only print if time has changed
-      const currentTime = `${remainingHours}: ${remainingMinutes}:${remainingSeconds.toString()}`; // Pad seconds with leading zero
+      const currentTime = `${remainingMinutes}:${remainingSeconds.toString()}`; 
       if (currentTime !== previousTime) {
         console.log(currentTime);
         previousTime = currentTime;
@@ -33,25 +32,12 @@ function getTime(targetDate:any) {
 
 const main = await inquirer.prompt([{
     type: "number",
-    name: "hour",
-    message: "type any hour for countdown",
-},{
-    type: "number",
-    name: "min",
-    message: "type any min for countdown",
-
-}
-
-])
-
-
-
-if(main.hour){
-    if(main.min){
-        const targetDate = new Date(Date.now() + (main.hour * 60 * 60 ) + (main.min * 60 * 1000));
-        getTime(targetDate)
-    }
-
+    name: "time",
+    message: "Type Any Time For Countdown",
+}])
+if(main.time){
+     const targetDate = new Date(Date.now() + (main.time * 60 * 1000)); 
+     getTime(targetDate);
  }
 
 

@@ -34,6 +34,9 @@ create a comprehensive adventure game where you can select a hero and a villain 
 # 9. Quiz Application
 in this quiz application you have to answer the question and if you answer correctly you will get 1 point and if you answer wrong you will get 0 point and it has total 5 questions and in the end you can see your score between 0 to 5
 
+# 10.Countdown timer
+a countdown timer take the input from the user and it will start the timer and it will show the time left and when the time is over it will show the time is over
+
 
 # Contribution
 We welcome contributions to this repository! If you have any project ideas, improvements, or bug fixes, please consider submitting a pull request. Follow the standard Git workflow for branching and merging your changes

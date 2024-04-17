@@ -1,29 +1,9 @@
 import inquirer from "inquirer";
 const currencies = {
-    PKR: {
-        PKR: 1,
-        USD: 0.0036,
-        GBP: 0.0029,
-        EUR: 0.0033,
-    },
-    USD: {
-        USD: 1,
-        PKR: 277.58,
-        GBP: 0.79,
-        EUR: 0.93,
-    },
-    GPB: {
-        GBP: 1,
-        USD: 1.26,
-        PKR: 350.48,
-        EUR: 1.17,
-    },
-    EUR: {
-        EUR: 1,
-        USD: 1.08,
-        PKR: 299.80,
-        GBP: 0.86,
-    },
+    USD: 1,
+    PKR: 277.58,
+    GBP: 0.79,
+    EUR: 0.93,
 };
 const main = await inquirer.prompt([
     {
@@ -44,10 +24,10 @@ const main = await inquirer.prompt([
         message: "Enter Your Amount",
     }
 ]);
-if (main.from && main.to && "amount") {
-    let res = main.from + main.to * main.amount;
-    console.log(res);
-}
-else {
-    console.log("invalid");
-}
+let fromAmount = currencies[main.from];
+let toAmount = currencies[main.to];
+let amount = main.amount;
+let baseAmount = fromAmount / amount;
+let ConvertedAmount = baseAmount * toAmount;
+Math.floor(ConvertedAmount);
+console.log(ConvertedAmount);

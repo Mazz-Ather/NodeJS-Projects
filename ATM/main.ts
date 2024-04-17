@@ -19,6 +19,7 @@ let myPin = 1122;
 
 
 let PinAns = await inquirer.prompt([
+  
   {
     name: "pin",
     type: "number",
@@ -30,6 +31,7 @@ if(PinAns.pin != myPin){
   
 } else if(PinAns.pin  == myPin) {
   
+  while(true){
 let method = await inquirer.prompt([
   {
     name: "method",
@@ -103,3 +105,4 @@ let method = await inquirer.prompt([
 
 
   }
+}
