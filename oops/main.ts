@@ -36,4 +36,4 @@ async function main() {
     `your name is ${Student.name} , and your personality is ${Student.personality}`
   );
 }
-main()
+main();

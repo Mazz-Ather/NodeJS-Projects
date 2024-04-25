@@ -60,7 +60,7 @@ async function openAccount() {
     { type: "number", name: "age", message: "Enter your age" },
     { type: "number", name: "mobile", message: "Enter your mobile number" },
   ]);
-  
+
   const user = new NewBank(0, fName, lastName, age, mobile); // Initial balance of 0
   console.table(user);
 }
