@@ -37,6 +37,11 @@ in this quiz application you have to answer the question and if you answer corre
 # 10.Countdown timer
 a countdown timer take the input from the user and it will start the timer and it will show the time left and when the time is over it will show the time is over
 
+# 11.oops
+this code checks that the person is introvert or extrovert
+
+# 12.oop_bank
+this code is a bank account where you can deposit and withdraw money (this code covers the basics of oop)
 
 # Contribution
 We welcome contributions to this repository! If you have any project ideas, improvements, or bug fixes, please consider submitting a pull request. Follow the standard Git workflow for branching and merging your changes

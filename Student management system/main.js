@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
 import figlet from "figlet";
@@ -56,7 +57,7 @@ async function allStu() {
                 console.table([allStudents]);
                 break;
             }
-            //? 
+            //?
         }
         else if (main.students === "Search for a student") {
             const searchStu = await inquirer.prompt([

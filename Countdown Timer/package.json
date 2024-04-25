@@ -1,13 +1,15 @@
 {
   "name": "mazz_countdown_timer",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "",
   "main": "main.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "bin": "main.js",
+  
+    "scripts": {
+      "mazz_countdown_timer": "node mazz_countdown_timer.js"
+  } ,
+   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
