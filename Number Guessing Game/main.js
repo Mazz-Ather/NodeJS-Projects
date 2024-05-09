@@ -21,11 +21,13 @@ async function start() {
     const { userInput } = answer;
     while (true) {
         if (userInput == secretNumber) {
+            console.log("**************************************************************");
             console.log(`Computer Choose ${chalk.yellow(secretNumber)} And You Also Choose ${chalk.bgBlue(userInput)},\n${chalk.green("Congratulations! You Win")}`);
+            console.log("**************************************************************");
             break;
         }
         else if (userInput != secretNumber) {
-            console.log(`Computer Choose ${chalk.yellow(secretNumber)} and you choose ${chalk.bgRed(userInput)}, ${chalk.red("You Guessed Wrong")},\n${chalk.cyan("Try Again")}`);
+            console.log(`Computer Choose ${chalk.yellow(secretNumber)} and you choose ${chalk.bgRed(userInput)}, ${chalk.red("You Guessed Wrong")},\n${chalk.red("*******************Try Again**********************")}`);
             await start();
             break;
         }

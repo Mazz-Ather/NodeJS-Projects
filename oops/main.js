@@ -24,7 +24,7 @@ async function main() {
         {
             type: "number",
             name: "number",
-            message: "type 1 or 2 ",
+            message: "Type 1 or 2 ",
         },
     ]);
     let name = ans.name;

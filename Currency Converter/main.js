@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 const currencies = {
     USD: 1,
@@ -7,22 +8,22 @@ const currencies = {
 };
 const main = await inquirer.prompt([
     {
-        type: 'list',
+        type: "list",
         name: "from",
         message: "What is the currency you want to convert FROM?",
-        choices: Object.keys(currencies)
+        choices: Object.keys(currencies),
     },
     {
-        type: 'list',
+        type: "list",
         name: "to",
         message: "What is the currency you want to convert TO?",
-        choices: Object.keys(currencies)
+        choices: Object.keys(currencies),
     },
     {
-        type: 'number',
+        type: "number",
         name: "amount",
         message: "Enter Your Amount",
-    }
+    },
 ]);
 let fromAmount = currencies[main.from];
 let toAmount = currencies[main.to];

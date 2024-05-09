@@ -33,7 +33,6 @@ async function allStu() {
             },
         ]);
         if (main.students === "Add a student") {
-            // let a =0;
             let add = await inquirer.prompt([
                 {
                     type: "input",
@@ -43,10 +42,7 @@ async function allStu() {
             ]);
             console.log(chalk.cyanBright("Added Successfully"));
             allStudents.push(add.students);
-            //  a++;
-            //  let y = add.students
             console.table([allStudents]);
-            //?
         }
         else if (main.students === "View all students") {
             if (allStudents === 0) {
@@ -57,7 +53,6 @@ async function allStu() {
                 console.table([allStudents]);
                 break;
             }
-            //?
         }
         else if (main.students === "Search for a student") {
             const searchStu = await inquirer.prompt([
@@ -75,7 +70,6 @@ async function allStu() {
                 console.log(chalk.cyan(`The Student You Are Looking For Is ${chalk.bgCyan(filteredStu[0])}`));
             }
         }
-        //?
         else if (main.students === "Remove A Student") {
             const removeStu = await inquirer.prompt([
                 {
@@ -88,12 +82,11 @@ async function allStu() {
                 console.log(chalk.red("No Students In Database"));
             }
             else {
-                allStudents.splice(removeStu.index, 1);
+                allStudents.splice(removeStu.index, 0);
                 console.log(`Successfully Deleted ${chalk.red(`${removeStu.remove}`)}`);
                 console.table([allStudents]);
             }
         }
-        //?
         else if (main.students === "Pay Fees of a student") {
             const payFees = await inquirer.prompt([
                 {

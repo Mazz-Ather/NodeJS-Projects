@@ -15,11 +15,14 @@ let main = await inquirer.prompt([
         choices: ["Assasins", "Robot"],
     },
 ]);
+console.log("**************************************************************");
 console.log(`So It's ${chalk.green(main.hero)} VS ${chalk.red(main.villain)}`);
-//! 1st hero   1st villain selected
+console.log("**************************************************************");
+//! 1st hero & 1st villain selected
 if (main.hero === "Batman") {
     if (main.villain === "Assasins") {
         //! hero batman
+        //! villain assasins
         let batmanfuel = 100;
         let villainFuel = 100;
         let vs = await inquirer.prompt([
@@ -30,10 +33,12 @@ if (main.hero === "Batman") {
                 choices: ["Attack", "Give up"],
             },
         ]);
-        //! villain assasins
         if (vs.weapon === "Attack") {
-            console.log(chalk.green(main.hero) + "'s  used Batarang and hit the " + chalk.red(main.villain));
-            console.log(chalk.red(main.villain) + `'s fuel remaining ${chalk.bgRed((villainFuel -= 50))}`);
+            console.log(chalk.green(main.hero) +
+                "'s  used Batarang and hit the " +
+                chalk.red(main.villain));
+            console.log(chalk.red(main.villain) +
+                `'s fuel remaining ${chalk.bgRed((villainFuel -= 50))}`);
             console.log(chalk.red(main.villain) +
                 `'s also hit you , ${chalk.green(main.hero)}'s remaining fuel is ${chalk.bgGreen((batmanfuel -= 30))}`);
             let again = await inquirer.prompt([
@@ -47,15 +52,17 @@ if (main.hero === "Batman") {
             if (again.weapon === "Attack") {
                 villainFuel -= 50;
                 if (villainFuel <= 0) {
-                    console.log(chalk.green(main.hero) + " used Batarang Again and hit the " + chalk.red(main.villain));
-                    console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.bgGreen(batmanfuel = 100)}`);
+                    console.log(chalk.green(main.hero) +
+                        " used Batarang Again and hit the " +
+                        chalk.red(main.villain));
+                    console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.bgGreen((batmanfuel = 100))}`);
                     console.log("Congratulation " + chalk.green(main.hero) + " won!");
                     process.exit();
                 }
             }
             else if (again.weapon === "Take Aid") {
                 batmanfuel = 100;
-                console.log(`${chalk.green(main.hero)}'s fuel now is ${(chalk.bgGreen(batmanfuel = 100))}`);
+                console.log(`${chalk.green(main.hero)}'s fuel now is ${chalk.bgGreen((batmanfuel = 100))}`);
                 let secondAgain = await inquirer.prompt([
                     {
                         type: "confirm",
@@ -66,7 +73,9 @@ if (main.hero === "Batman") {
                 if ((secondAgain.weapon === "y", "Y", "YES", "yes")) {
                     villainFuel -= 50;
                     if (villainFuel <= 0) {
-                        console.log(main.hero + " used Batarang Again and hit the " + chalk.red(main.villain));
+                        console.log(main.hero +
+                            " used Batarang Again and hit the " +
+                            chalk.red(main.villain));
                         console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.red("0")}`);
                         console.log("Congratulation " + chalk.green(main.hero) + " won!");
                         process.exit();
@@ -97,10 +106,12 @@ if (main.hero === "Batman") {
         ]);
         //! villain robot
         if (vs.weapon === "Attack") {
-            console.log(chalk.green(main.hero) + "'s  used Batarang and hit the " + chalk.red(main.villain));
-            console.log(main.villain + `'s fuel remaining ${(chalk.bgRed(villainFuel -= 10))}`);
+            console.log(chalk.green(main.hero) +
+                "'s  used Batarang and hit the " +
+                chalk.red(main.villain));
+            console.log(main.villain + `'s fuel remaining ${chalk.bgRed((villainFuel -= 10))}`);
             console.log(chalk.red(main.villain) +
-                `'s also hit you , ${chalk.green(main.hero)}'s remaining fuel is ${(chalk.bgGreen(herofuel -= 98))}`);
+                `'s also hit you , ${chalk.green(main.hero)}'s remaining fuel is ${chalk.bgGreen((herofuel -= 98))}`);
             let again = await inquirer.prompt([
                 {
                     type: "list",
@@ -111,7 +122,9 @@ if (main.hero === "Batman") {
             ]);
             if (again.weapon === "Attack") {
                 villainFuel -= 10;
-                console.log(chalk.green(main.hero) + " used Batarang Again and hit the " + chalk.red(main.villain));
+                console.log(chalk.green(main.hero) +
+                    " used Batarang Again and hit the " +
+                    chalk.red(main.villain));
                 console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.bgRed("80")}`);
                 console.log(chalk.green(main.hero) + "'s fuel is " + chalk.bgGreen("0"));
                 console.log(chalk.green(main.hero) + chalk.red(" lost!"));
@@ -120,7 +133,7 @@ if (main.hero === "Batman") {
             }
             else if (again.weapon === "Take Aid") {
                 herofuel = 100;
-                console.log(`${chalk.green(main.hero)}'s fuel now is ${(chalk.bgGreen(herofuel = 100))}`);
+                console.log(`${chalk.green(main.hero)}'s fuel now is ${chalk.bgGreen((herofuel = 100))}`);
                 let secondAgain = await inquirer.prompt([
                     {
                         type: "confirm",
@@ -129,7 +142,9 @@ if (main.hero === "Batman") {
                     },
                 ]);
                 if ((secondAgain.weapon === "y", "Y", "YES", "yes")) {
-                    console.log(chalk.green(main.hero) + " used Batarang Again and hit the " + chalk.red(main.villain));
+                    console.log(chalk.green(main.hero) +
+                        " used Batarang Again and hit the " +
+                        chalk.red(main.villain));
                     console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.red("70")}`);
                     console.log(chalk.green(main.hero) + "'s fuel is" + chalk.bgGreen(0));
                     console.log(chalk.green(main.hero) + chalk.red(" lost!"));
@@ -159,8 +174,11 @@ if (main.hero === "Superman") {
         ]);
         //! villain assasins
         if (vs.weapon === "Attack") {
-            console.log(chalk.green(main.hero) + "'s  used Batarang and hit the " + chalk.red(main.villain));
-            console.log(chalk.red(main.villain) + `'s fuel remaining ${chalk.bgRed((villainFuel -= 50))}`);
+            console.log(chalk.green(main.hero) +
+                "'s  used Batarang and hit the " +
+                chalk.red(main.villain));
+            console.log(chalk.red(main.villain) +
+                `'s fuel remaining ${chalk.bgRed((villainFuel -= 50))}`);
             console.log(chalk.red(main.villain) +
                 `'s also hit you , ${chalk.green(main.hero)}'s remaining fuel is ${chalk.bgGreen((supfuel -= 30))}`);
             let again = await inquirer.prompt([
@@ -174,7 +192,9 @@ if (main.hero === "Superman") {
             if (again.weapon === "Attack") {
                 villainFuel -= 50;
                 if (villainFuel <= 0) {
-                    console.log(chalk.green(main.hero) + " used Batarang Again and hit the " + chalk.red(main.villain));
+                    console.log(chalk.green(main.hero) +
+                        " used Batarang Again and hit the " +
+                        chalk.red(main.villain));
                     console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.bgRed("0")}`);
                     console.log("Congratulation " + chalk.green(main.hero) + " won!");
                     process.exit();
@@ -182,7 +202,7 @@ if (main.hero === "Superman") {
             }
             else if (again.weapon === "Take Aid") {
                 supfuel = 100;
-                console.log(`${chalk.green(main.hero)}'s fuel now is ${(chalk.bgGreen(supfuel = 100))}`);
+                console.log(`${chalk.green(main.hero)}'s fuel now is ${chalk.bgGreen((supfuel = 100))}`);
                 let secondAgain = await inquirer.prompt([
                     {
                         type: "confirm",
@@ -193,7 +213,9 @@ if (main.hero === "Superman") {
                 if ((secondAgain.weapon === "y", "Y", "YES", "yes")) {
                     villainFuel -= 50;
                     if (villainFuel <= 0) {
-                        console.log(main.hero + " used Batarang Again and hit the " + chalk.red(main.villain));
+                        console.log(main.hero +
+                            " used Batarang Again and hit the " +
+                            chalk.red(main.villain));
                         console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.red("0")}`);
                         console.log("Congratulation " + chalk.green(main.hero) + " won!");
                         process.exit();
@@ -224,10 +246,12 @@ if (main.hero === "Superman") {
         ]);
         //! villain robot
         if (vs.weapon === "Attack") {
-            console.log(chalk.green(main.hero) + "'s  used Laser Light and hit the " + chalk.red(main.villain));
-            console.log(main.villain + `'s fuel remaining ${(chalk.bgRed("10"))}`);
+            console.log(chalk.green(main.hero) +
+                "'s  used Laser Light and hit the " +
+                chalk.red(main.villain));
+            console.log(main.villain + `'s fuel remaining ${chalk.bgRed("10")}`);
             console.log(chalk.red(main.villain) +
-                `'s also hit you , ${chalk.green(main.hero)}'s remaining fuel is ${(chalk.bgGreen("90"))}`);
+                `'s also hit you , ${chalk.green(main.hero)}'s remaining fuel is ${chalk.bgGreen("90")}`);
             let again = await inquirer.prompt([
                 {
                     type: "list",
@@ -237,10 +261,12 @@ if (main.hero === "Superman") {
                 },
             ]);
             if (again.weapon === "Attack") {
-                console.log(chalk.green(main.hero) + " used Laser Light Again and hit the " + chalk.red(main.villain));
+                console.log(chalk.green(main.hero) +
+                    " used Laser Light Again and hit the " +
+                    chalk.red(main.villain));
                 console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.bgRed("0")}`);
                 console.log(chalk.green(main.hero) + "'s fuel is " + chalk.bgGreen(" 90"));
-                console.log('Congratulations ' + chalk.green(main.hero) + chalk.red(" you Win!"));
+                console.log("Congratulations " + chalk.green(main.hero) + chalk.red(" you Win!"));
                 process.exit();
                 // }
             }
@@ -250,7 +276,7 @@ if (main.hero === "Superman") {
             }
             else if (again.weapon === "Take Aid") {
                 herofuel = 100;
-                console.log(`${chalk.green(main.hero)}'s fuel now is ${(chalk.bgGreen("100"))}`);
+                console.log(`${chalk.green(main.hero)}'s fuel now is ${chalk.bgGreen("100")}`);
                 let secondAgain = await inquirer.prompt([
                     {
                         type: "confirm",
@@ -259,7 +285,9 @@ if (main.hero === "Superman") {
                     },
                 ]);
                 if ((secondAgain.weapon === "y", "Y", "YES", "yes")) {
-                    console.log(chalk.green(main.hero) + " used Laser light Again and hit the " + chalk.red(main.villain));
+                    console.log(chalk.green(main.hero) +
+                        " used Laser light Again and hit the " +
+                        chalk.red(main.villain));
                     console.log(`${chalk.red(main.villain)}'s fuel remaining is ${chalk.red("0")}`);
                     console.log(chalk.green(main.hero) + "'s fuel is" + chalk.bgGreen("100"));
                     console.log("Congratulations" + chalk.green(main.hero) + chalk.green(" win!!!"));

@@ -12,14 +12,6 @@ async function analyzeSentence() {
       message: "Please enter a sentence",
     });
 
-    if (main.sentence.toLowerCase === "q") {
-      console.log("goodbyeeeee");
-      if (allAnalyze.length > 0) {
-        console.table(allAnalyze);
-        break;
-      }
-    }
-
     let words = main.sentence.trim().split(/\s+/).length;
     let alphabet = main.sentence.replace(/[^a-zA-Z]/g, "").length;
     let digit = main.sentence.replace(/[^0-9]/g, "").length;

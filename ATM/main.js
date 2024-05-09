@@ -2,7 +2,7 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 import figlet from "figlet";
-await figlet("Welcome To My BANK", function (err, data) {
+await figlet("Welcome To My ATM", function (err, data) {
     if (err) {
         console.log("Something went wrong...");
         console.dir(err);
@@ -11,12 +11,14 @@ await figlet("Welcome To My BANK", function (err, data) {
     console.log(data);
 });
 let myBalance = 10000;
+console.log("**************************************************************");
 await console.log(`${chalk.green(`\n YOUR CURRENT BALANCE IS  '${myBalance}' \n`)}`);
+console.log("**************************************************************");
 let myPin = 1122;
 let PinAns = await inquirer.prompt([
     {
         name: "pin",
-        type: "number",
+        type: "password",
         message: chalk.whiteBright("Enter Your Pin"),
     },
 ]);

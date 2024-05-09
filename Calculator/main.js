@@ -73,12 +73,18 @@ async function startAgain() {
         name: "restart",
         message: "Do You Want To continue ? IF Yes Press Y",
     });
-    if (again.restart === "y" ||
-        again.restart === "Y" ||
-        again.restart === "yes" ||
-        again.restart === "YES") {
-        console.log(chalk.greenBright("Enjoy Calculation..."));
-        start();
+    while (true) {
+        if (again.restart === "y" ||
+            again.restart === "Y" ||
+            again.restart === "yes" ||
+            again.restart === "YES") {
+            console.log(chalk.greenBright("Enjoy Calculation..."));
+            start();
+            break;
+        }
+        else {
+            break;
+        }
     }
 }
 startAgain();
