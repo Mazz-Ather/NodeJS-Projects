@@ -16,7 +16,7 @@ const main: any = await inquirer.prompt([
     message: "What is the currency you want to convert FROM?",
     choices: Object.keys(currencies),
   },
-  {
+  { 
     type: "list",
     name: "to",
     message: "What is the currency you want to convert TO?",

@@ -83,6 +83,7 @@ if (PinAns.pin != myPin) {
           choices: [1000, 2000, 5000, 7000],
         },
       ]);
+      
       if (Fast.cash === 1000) {
         myBalance -= Fast.cash;
 

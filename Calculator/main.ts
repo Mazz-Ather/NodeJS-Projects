@@ -5,6 +5,7 @@ import chalk from "chalk";
 import figlet from "figlet";
 import chalkAnimation from "chalk-animation";
 
+
 let rainbow = chalkAnimation.rainbow("Welcome To My Calculator");
 rainbow.start();
 

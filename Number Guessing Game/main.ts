@@ -3,7 +3,7 @@
 import inquirer from "inquirer";
 import figlet from "figlet";
 import chalk from "chalk";
-
+ 
 await figlet("Guess A Number", function (err, data) {
   if (err) {
     console.log("Something went wrong...");

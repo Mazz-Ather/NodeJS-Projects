@@ -13,7 +13,7 @@ class student extends person {
   name: string;
   constructor(name: string, personality: number) {
     super(personality);
-    this.name = name;
+    this.name = name; 
   }
 }
 async function main() {

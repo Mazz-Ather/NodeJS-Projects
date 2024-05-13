@@ -9,7 +9,7 @@ let username = await inquirer.prompt([
     type: "input",
     message: chalk.black("What is your name?"),
   },
-]);
+]);  
 console.log(`welcome to Typescript quiz ${chalk.green(username.Name)}`);
 let q1: any = await inquirer.prompt([
   {

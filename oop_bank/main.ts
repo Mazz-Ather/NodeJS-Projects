@@ -84,7 +84,7 @@ async function main() {
           type: "number",
           name: "deposit",
           message: "How much money do you want to deposit?",
-        });
+        }); 
         bankAccount.deposit(deposit);
         break;
       case "Withdraw":
