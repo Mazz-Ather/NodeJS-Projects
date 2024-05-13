@@ -33,6 +33,7 @@ class NewBank extends Customer {
     this.amount = amount; // Pass initial balance to constructor
   }
 
+  
   deposit(amount: number): void {
     this.amount += amount;
     console.log(`Amount deposited successfully: ${amount}`);
